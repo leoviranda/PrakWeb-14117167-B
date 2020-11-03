@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>tugas1</title>
+    <link rel="stylesheet" href="tugas1.css">
+    <style media="screen">
+      img{
+        margin: 50px 45%;
+      }
+      .kolom1{
+        float: left;
+        width: 200px;
+        height: auto;
+        border-left: 3px solid black;
+      }
+      li{
+        margin: 4px;
+      }
+      .kolom2{
+        float: left;
+        width: 584px;
+        height: auto;
+        border-right: 3px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="foto/logo itera.png" alt="ini logo itera" style="width: 90px; height: 100px;">
+    </header>
+    <div class="kolom1" style="background-color: #ffff01;">
+      <ul>
+        <li><a href="#">Beranda</a></li>
+        <li><a href="#">Data Mahasiswa</a></li>
+        <li><a href="#">IPK</a></li>
+        <li><a href="#">KRS</a></li>
+        <li><a href="#">KSM</a></li>
+        <li><a href="#">KKN</a></li>
+        <li><a href="#">UKT</a></li>
+      </ul>
+    </div>
+    <div class="kolom2" style="background-color: #d99896; padding-bottom: 6px;">
+      <p>HTML atau Hypertext Markup Language adalah sebuah bahasa markup yang berfungsi sebagai kerangka dari sebuah website</p>
+      <p style="font-weight: bold;">Data Mahasiswa</p>
+      <form action="data.php" method="post">
+      <p>
+        <label>Nama: </label>
+        <input type="text" name="nama" placeholder="Nama Lengkap">
+      </p>
+      <p>
+        <label>NIM: </label>
+        <input type="text" name="nim" placeholder="NIM">
+        <input type="submit" name="submit" value="submit" style="margin: 0 30px;">
+      </p>
+    </div>
+    <footer>
+      <p style="text-align: center;">14117167 Leo Viranda Millennium</p>
+    </footer>
+  </body>
+</html>
