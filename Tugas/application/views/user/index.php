@@ -13,10 +13,9 @@
         <tr>
             <td>
             Selamat datang <?= $this->session->userdata('username');?>.
-            Klik disini untuk <a href="<?=base_url('user/logout');?>" tite="Logout"></a> Logout.
+            Klik disini untuk <a href="<?=base_url('user/logout');?>" tite="Logout">Logout.</a> 
             </td>
         </tr>
     </table>
-    
 </body>
 </html>

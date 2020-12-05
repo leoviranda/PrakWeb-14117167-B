@@ -5,11 +5,10 @@ class Login extends CI_Controller {
 
     public function __construct(){
         parent::__construct();
-        $this->load->model('Model');
+        $this->load->model('Model', 'model_model');
     }
 
-	public function index()
-	{
+	public function index(){
         if($this->session->userdata('email')){
             redirect('user');
         }
@@ -20,7 +19,7 @@ class Login extends CI_Controller {
         $username = $this->input->post('user_name');
         $password = $this->input->post('password');
 
-        $getUser = $this->Model->getUsername($username);
+        $getUser = $this->model_model->getUsername($username);
 
         if ($getUser) {
             $data = [
@@ -28,10 +27,10 @@ class Login extends CI_Controller {
                 'loggedin_time'=>time()
             ];
             $this->session->set_userdata($data);
-            redirect('User');
+            redirect('user');
         }else{
             $this->session->set_flashdata('message','<p>User tidak terdaftar</p>');
-            redirect('Login');
+            redirect('login');
         }
     }
 }

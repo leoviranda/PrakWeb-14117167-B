@@ -7,7 +7,7 @@
 </head>
 <body>
     <?= $this->session->flashdata('message');?>
-    <form action="post" action="<?=base_url('login/cekLogin')?>">
+    <form method="post" action="<?=base_url('login/cekLogin')?>">
         <table>
             <tr>
                 <td align="center" colspan="2">Enter Login Details</td>
@@ -19,7 +19,7 @@
                 </td>
             </tr>
             <tr>
-            <td align="right">Password</td>
+                <td align="right">Password</td>
                 <td>
                     <input type="password" name="password">
                 </td>
