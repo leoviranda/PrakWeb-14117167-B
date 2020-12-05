@@ -1,4 +1,5 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Model extends CI_model {
 
@@ -9,8 +10,8 @@ class Model extends CI_model {
     public function isLoginSessionExpired(){
         $login_session_duration = 5;
         $current_time = time();
-        if (isset($_SESSION['loggedin_time']) and isset($_SESSION['username'])) {
-            if ((time() - $this->session->userdata('loggedin_time')) > $login_session_duration) {
+        if(isset($_SESSION['loggedin_time']) and isset($_SESSION['username'])) {
+            if((time() - $this->session->userdata('loggedin_time')) > $login_session_duration) {
                 return true;
             }
         }

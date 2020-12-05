@@ -8,12 +8,12 @@ class User extends CI_Controller {
     }
 
 	public function index(){
-        if ($this->session->userdata('username'==NULL)) {
+        if ($this->session->userdata('username')==NULL) {
             $this->session->set_flashdata('message', '<p>Login dulu</p>');
             redirect('login');
         }
-        if ($this->session->userdata('username'!=NULL)) {
-            if ($this->model_model->isiLoginSessionExpired()) {
+        if ($this->session->userdata('username')!=NULL) {
+            if ($this->model_model->isLoginSessionExpired()) {
                 $this->session->set_flashdata('message', '<p>Login sesi telah habis, silahkan login kembali</p>');
                 redirect('user/logout');
             }
