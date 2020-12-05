@@ -19,18 +19,19 @@ class Login extends CI_Controller {
         $username = $this->input->post('user_name');
         $password = $this->input->post('password');
 
-        $getUser = $this->model_model->getUsername($username);
+        $this->model_model->getUsername($username, $password);
+        // $getUser = $this->model_model->getUsername($username);
 
-        if ($getUser) {
-            $data = [
-                'username'=>$username,
-                'loggedin_time'=>time()
-            ];
-            $this->session->set_userdata($data);
-            redirect('user');
-        }else{
-            $this->session->set_flashdata('message','<p>User tidak terdaftar</p>');
-            redirect('login');
-        }
+        // if ($getUser) {
+        //     $data = [
+        //         'username'=>$username,
+        //         'loggedin_time'=>time()
+        //     ];
+        //     $this->session->set_userdata($data);
+        //     redirect('user');
+        // }else{
+        //     $this->session->set_flashdata('message','<p>User tidak terdaftar</p>');
+        //     redirect('login');
+        // }
     }
 }
