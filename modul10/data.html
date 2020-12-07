@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input" type="text">
+    <button onclick="fungsiInput()">Tambah</button>    
+        <script>
+            function fungsiInput(){
+                var input = document.getElementById("input").value;
+
+                var ul = document.createElement("LI");
+                ul.innerHTML = input;
+
+                document.body.appendChild(ul);
+            }
+        </script>
+</body>
+</html>
