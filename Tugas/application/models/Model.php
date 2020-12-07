@@ -32,7 +32,17 @@ class Model extends CI_model {
     public function tampildata(){
         $query = $this->db->order_by('id','ASC')->get('user');
         return $query->result();
-    }
+	}
+	
+	public function tampildatauser($where){
+		$query = $this->db->get_where('user',$where);
+		return $query->result();
+	}
+
+	public function update($where, $data, $table){
+		$this->db->where($where);
+		$this->db->update($table, $data);
+	}
     
     public function isLoginSessionExpired(){
         $login_session_duration = 5;

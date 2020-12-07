@@ -21,15 +21,14 @@
         <tbody>
         <?php
         $no = 1;
-        echo form_open('user/edit'); ?>
+        ?>
             <tr>
                 <td style="text-align: center;"><?php echo $no; ?></td>
                 <td><?php echo $user['username']; ?></td>
-                <td><input type="text" name="fname" value="<?php echo $user['fname']; ?>"></td>
-                <input type="hidden" name="id" value="<?php echo $user['id']; ?>">
-                <td><input type="submit" name="" value="Save"></td>
+                <td><?php echo $user['fname']; ?></td>
+                <td><button><a href="<?= base_url('user/hal_edit/').$user['id'];?>">Edit</a></button></td>
+                <td><button onclick="return confirm('Apakah anda yakin ingin menghapus data ini ?');" href="<?= base_url('user/hapus').$user['id'];?>">Hapus</button></td>
             </tr>
-        <?php echo form_close() ?>
         </tbody>
     </table>
     

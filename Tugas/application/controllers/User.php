@@ -19,12 +19,33 @@ class User extends CI_Controller {
 
     public function user(){
         if($this->session->level) {
-			$data = array('data_user' => $this->model_model->tampildata());
-			$this->load->view('user/index', $data);
+            $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
+			// $data = array('data_user' => $this->model_model->tampildatauser($where));
+			$this->load->view('user/index_user', $data);
 		} else {
 			$this->session->set_flashdata('message','Please Login!');
 			redirect('Login');
 		}
+    }
+
+    public function hal_edit($id){
+		if($this->session->level) {
+			$data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
+			$this->load->view('user/edit', $data);
+		} else {
+			$this->session->set_flashdata('message','Please Login!');
+			redirect('Login');
+		}
+	}
+    public function edit(){
+        $id = $this->input->post('id');
+		$fname = $this->input->post('fname');
+
+		$data = array('fname' => $fname);
+		$where = array('id' => $id);
+
+		$this->model_model->update($where, $data, 'user');
+		redirect('user/user');
     }
     
     public function logout(){
