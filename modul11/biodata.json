@@ -1,0 +1,20 @@
+{
+    "dataDiri": {
+        "nama": {
+            "awal": "Leo",
+            "akhir": "Viranda Millennium"
+        },
+        "saudara": "Juli",
+        "orangtua": ["Akub", "Susi"],
+        "hobby": "bucin",
+        "alamat": {
+            "desa": "Korpri Raya",
+            "Kecamatan": "Sukarame",
+            "Kota": "Bandar Lampung"
+        },
+        "sosmed": {
+            "twitter": "leoviranda",
+            "instagram": "leoviranda"
+        }
+    }
+}
